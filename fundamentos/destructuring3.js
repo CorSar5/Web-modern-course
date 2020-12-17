@@ -1,0 +1,13 @@
+function rand({min = 0, max=1000 }) {
+    const value = Math.random() * (max- min) + min 
+    return Math.floor(value)
+}
+
+const obj = {max: 50, min :40}
+console.log(rand(obj))
+console.log(rand({min:955}))
+console.log(rand({}))
+//console.log(rand()) desctructuring something undefined or null it's impossible
+
+// The Function Math.Random only gives numbers between 0 and 1 that's why we subtract the max and min, multiply for the number that has been gave and add the minimun
+

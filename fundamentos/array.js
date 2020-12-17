@@ -8,10 +8,10 @@ console.log(valores.length) // quantos valores tem a constante
 
 valores.push({id : 3}, false, null, 'teste') // para adicionar valores a Array's
 console.log(valores)
-//Os tipos de Dados em Array's deve ser HOMOGÉNEO
+//Os tipos de Dados em Array's devem ser HOMOGÉNEOS
 
 console.log(valores.pop()) // tirar o ultimo elemento
-delete valores [0] // delete o valor e o que fica entre [] é o elemento que fica empty
+delete valores [0] // delete ao valor e o que fica entre [] é o elemento que fica empty
 console.log(valores)
 
 console.log(typeof valores) //object (um Array é um objeto)
