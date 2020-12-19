@@ -17,6 +17,6 @@ const client = {
     }
 }
 
-console.log(greetings)
+//console.log(greetings)
 console.log(exec())
 console.log(client)
