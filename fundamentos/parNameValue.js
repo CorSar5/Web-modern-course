@@ -6,7 +6,7 @@ function exec() {
     return greetings
 }
 
-//Objects are nested groups of name/value
+console.log(greetings)//Objects are nested groups of name/value
 const client = {
     name : 'Peter',
     age : '32',
@@ -17,6 +17,5 @@ const client = {
     }
 }
 
-//console.log(greetings)
 console.log(exec())
 console.log(client)
