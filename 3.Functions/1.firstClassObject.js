@@ -24,12 +24,12 @@ function run(fun) {
 run(function () {console.log('Executing...')})
 
 // A function can return/contain another function
-function some(a, b) {
+function sum(a, b) {
     return function (c) {
         console.log(a+b+c)
     }
 }
 
-some(2, 3)(5)
-const plus = some(2,3)
+sum(2, 3)(5)
+const plus = sum(2,3)
 plus(4)
