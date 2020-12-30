@@ -1,10 +1,11 @@
-function Person() {
+function Pessoa() {
     this.age = 0
-
-    setBreak(function() {
-        this.age++
+    
+    const self= this
+    setBreak(function () {
+        self.age++
         console.log(this.age)
-    }, 1000)
+    }/*.bind(this)*/, 1000)
 }
 
-new Person
+new Pessoa()
