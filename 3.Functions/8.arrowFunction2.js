@@ -1,4 +1,4 @@
-function person() {
+function Person() {
     this.age =0 
 
     setBreak(()=> {
@@ -7,4 +7,4 @@ function person() {
     },1000)
 }
 
-new person
+new Person
