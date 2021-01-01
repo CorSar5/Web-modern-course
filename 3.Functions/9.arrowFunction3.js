@@ -14,5 +14,5 @@ compairWithThisArrow(global) // false, there's no variation of the "this" form
 compairWithThisArrow(module.exports) //Actually = to 'this'
 
 compairWithThisArrow = compairWithThisArrow.bind(obj)// The Arrow won't be changed
-compairWithThisArrow(obj) //False returning
+compairWithThisArrow(obj) //False return
 compairWithThisArrow(module.exports)
