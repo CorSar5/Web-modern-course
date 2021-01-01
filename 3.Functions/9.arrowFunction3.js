@@ -15,4 +15,4 @@ compairWithThisArrow(module.exports) //Actually = to 'this'
 
 compairWithThisArrow = compairWithThisArrow.bind(obj)// The Arrow won't be changed
 compairWithThisArrow(obj) //False returning
-compairWithThisArrow(module.exports)
+compairWithThisArrow(module.exports)// True
