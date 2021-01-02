@@ -1,7 +1,7 @@
 function Person() {
     this.age =0 
 
-    setBreak(()=> {
+    setInterval(()=> {
         this.age++
         console.log(this.age)
     },1000)
