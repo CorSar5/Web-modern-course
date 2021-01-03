@@ -6,7 +6,7 @@ dobro = (a) => {
     return 2*a 
 }
 
-dobro = a => 2*a // there are no '{}' so it will automatically be returned (only availiable with 1 operation or function)
+dobro = a => 2*a // there are no '{}' so it will automatically be returned (only available with 1 operation or function)
 console.log(dobro(Math.PI))
 
 let hi = function() {
