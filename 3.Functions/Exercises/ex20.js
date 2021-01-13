@@ -1,73 +1,78 @@
-function money(x) {
-    let c100 = 0
-    let c50 = 0
-    let c10 = 0
-    let c5 = 0
-    let c1 = 0
-    let value = valor(x)
-    while (x >= value) {
-        switch (value) {
+function takeMoney(Value) {
+    let counter100 = 0
+    let counter50 = 0
+    let counter10 = 0
+    let counter5 = 0
+    let counter1 = 0
+    let Notevalue = calculater(Value)
+    while (Value >= Notevalue){
+        switch (Notevalue) {
             case 100:
-                x -= 100
-                c100++
+                Value -= 100
+                counter100++
                 break
             case 50:
-                value -= 50
-                c50++
+                Value -= 50
+                counter50++
                 break
             case 10:
-                value -= 10
-                c10++
+                Value -= 10
+                counter10++
                 break
             case 5:
-                value -= 5
-                c5++
+                Value -= 5
+                counter5++
                 break
-            case 1:
-                c1++
-                value -= 1
+            case 1 :
+                Value -=1
+                counter1++
                 break
         }
+        
+        Notevalue = calculater(Value)
 
-        value = valor(x)
-    
     }
-    return elab(c100,c50,c10,c5,c1)
+    return elaborate(counter100, counter50, counter10, counter5, counter1)
 }
 
-function valor(x){
-    if (x >= 100){
+function calculater(Value) {
+    if (Value >= 100){
         return 100
-    }else if (x >= 50){
+    }else if (Value >= 50){
         return 50
-    }else if (x >= 10){
+    }else if (Value >= 10) {
         return 10
-    }else if (x >= 5){
+    }else if (Value >= 5){
         return 5
-    }else if (x >= 1){
+    }else if (Value >= 1){
         return 1
     }
 }
 
-function elab(c100,c50,c10,c5,c1) {
+function elaborate(counter100, counter50, counter10, counter5, counter1) {
     let result = ''
 
-    if(c100>0){
-        result += `${c100} note(s) of 100€. `
+    if (counter100> 0) {
+        result += `${counter100} note(s) of 100€.`
     }
-    if(c50>0){
-        result += `${c50} note(s) of 50€.`
+
+    if (counter50 > 0){
+        result += `${counter50} note(s) of 50€.`
     }
-    if(c10>0){
-        result += `${c10} note(s) of 10€.`
+
+    if (counter10>0) {
+        result += `${counter10} note(s) of 10€.`
     }
-    if(c5>0){
-        result += `${c5} note(s) of 5€.`
+
+    if (counter5 > 0) {
+        result += `${counter5} note(s) of 5€`
     }
-    if(c1>0){
-        result += `${c1} note(s) of 1€.`
+
+    if (counter1 > 0){
+        result += `${counter1} note(s) of 1€`
     }
+
     return result
 }
 
-console.log(money(123));
+console.log(takeMoney(166))
