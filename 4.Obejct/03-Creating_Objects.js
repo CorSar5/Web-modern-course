@@ -2,7 +2,7 @@
 const obj1 = {}
 console.log(obj1)
 
-//Obejct in JS
+//Object in JS
 console.log(typeof Object, typeof new Object)
 const obj2 = new Object
 console.log(obj2)
