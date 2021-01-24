@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercises HTML</title>
+</head>
+<body>
+    <header>
+        <h1>Exercícios HTML</h1>
+    </header>
+    <nav>
+        <a wm-nav= "exercises/teste.html">00 - Test</a>|
+        <a wm-nav = "exercises/temp.html">Temp</a>
+    </nav>
+    <section id="content"> </section>
+    <footer>
+        <br>
+        Web-Modern-Course
+    </footer>
+    <script>
+        /*document.querySelectorAll('a').forEach(link => {
+            const content = document.getElementById('content')
+            
+            link.onclick = function(e) {
+                e.preventDefault()
+                fetch(link.href) //Ajax call
+                    .then(answer => answer.text())
+                    .then(html => content.innerHTML = html)
+            }
+        }),*/
+        document.querySelectorAll('[wm-nav]').forEach(link => {
+            const content = document.getElementById('content')
+            
+            link.onclick = function(e) {
+                e.preventDefault()
+                fetch(link.getAttribute('wm-nav')) //Ajax call
+                    .then(answer => answer.text())
+                    .then(html => content.innerHTML = html)
+            }
+        })
+    </script>
+</body>
+</html>
