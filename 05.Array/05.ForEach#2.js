@@ -14,8 +14,6 @@ Array.prototype.forEach2 = function(callback) {
     }
 }
 
-const approved = ['Amanda', 'Corney', 'Linda', 'Tatiana']
-
 approved.forEach(function(name,  index) {
     console.log(`${index +1}) ${name}`)
 });
