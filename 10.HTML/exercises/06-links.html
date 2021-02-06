@@ -1,9 +1,20 @@
 <h1>Links</h1>
 <!--Absolute URL-->
-<a href="https://www.google.com">Google 1</a><br>
+<a id="beginning"href="https://www.google.com">Google 1</a><br>
 <a href="https://www.google.com" target = "_blank">Google 2</a><br><br>
 
 <!--Relative URL-->
 <a href="04.Index.html">Back 1</a><br> <!--Wouldn't work on its own page (06-links.html)-->
 <a href="/04.Index.html">Back 2</a><br> <!--This way you can serve all the directories and files-->
-<a href="../04.Index.html">Back 3</a><br><!--Gets out of the current directory and searches others, ../ makes a directory, each of them will make the search a directory further-->
+<a href="../04.Index.html">Back 3</a><br><br><!--Gets out of the current directory and searches others, ../ makes a directory, each of them will make the search a directory further-->
+
+<a href="mailto:email@business.com">Contact Us</a><br><br>
+
+
+<div id="news" style="position: absolute;top:2000px;">
+    <h1>Bomb News</h1>
+    <p>It was nothing</p>
+    <a href="#beginning">Back</a>
+</div>
+
+<a href="#news">Go to news</a>
