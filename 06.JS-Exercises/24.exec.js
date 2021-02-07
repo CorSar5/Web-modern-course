@@ -1,6 +1,5 @@
 function characterCounter(character, string){
-    let characters = string.toLowerCase().split('')
-    character = character.toLowerCase()
+    let characters = string.split('')
     let number = 0
     for( item in characters){
         if (characters[item] == character)
