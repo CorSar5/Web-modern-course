@@ -3,7 +3,7 @@ const fs = require('fs')
 const way = __dirname + '/11.Archive.json'
 
 //synchronous...
-const content = fs.readFileSync(way, 'utf-8') //fs means file system
+const content = fs.readFileSync(way, 'utf-8') //fs means file server
 console.log(content)
 
 //asynchronous...
