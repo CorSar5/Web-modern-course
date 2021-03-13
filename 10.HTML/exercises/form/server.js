@@ -6,7 +6,14 @@ app.use(bodyParser.urlencoded({extended: true})) //this line is needed to run th
 
 app.post('/users', (req, resp) => {
     console.log(req.body)
-    resp.send('<h1>Congratulations!</h1>')
+    //console.log(req.query) in a get situation although it would show the password
+    resp.send('<h1>Congratulations. User Included!</h1>')
+})
+
+app.post('/users/:id', (req, resp) => {
+    console.log(req.params.id)
+    console.log(req.body)
+    resp.send('<h1>Congratulations. User has been changed!</h1>')
 })
 
 app.listen(3003)

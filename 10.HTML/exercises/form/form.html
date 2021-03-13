@@ -1,6 +1,7 @@
 <h1>Formular</h1>
 
-<form action="http://localhost:3003/users" method="POST">
+<form  method="POST"> <!--If there's get here we'll have informations in the searchbar-->
+    <input type="hidden" name="id" value="3">
     <input type="text" name="name">
     <input type="password" name="password" >
     <textarea name="bio" cols="30" rows="10"></textarea>
@@ -19,7 +20,7 @@
         <option value="Mi">Miami</option>
         <option value="Fl">Florida</option>
     </select>
-    <select name="Interests" multiple size="5">
+    <select name="Interests" multiple size="6">
         <option value="js">JavaScript</option>
         <option value="java">Java</option>
         <option value="php">PHP</option>
@@ -27,7 +28,8 @@
         <option value="go">Go</option>
         <option value="c">C</option>
     </select>
-    <button>Include</button>
+    <button formaction="http://localhost:3003/users" formmethod="POST">Include</button>
+    <button formaction="http://localhost:3003/users/3">Change</button>
 </form>
 
 <style>
