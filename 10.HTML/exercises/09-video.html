@@ -1,0 +1,74 @@
+<video id="myVideo" width="800" height="450" controls autoplay controlsList="nodownload">
+    <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
+    Your source doesn't suport the video tag.
+</video>
+
+<div wm-progress="myVideo" class="progress">
+    <div></div>
+</div>
+
+<div>
+    <button onclick="playV()" type="button" wm-play="myVideo">Play</button>
+    <button  onclick="pauseIt()" wm-pause="myVideo">Pause</button>
+</div>
+
+<style>
+    .progress{
+        height:20px;
+        width:500px;
+        margin:20px;
+        border: solid 1px #444;
+    }
+    .progress > div{
+        background-color:red;
+        color: #fff;
+        height: 100%;
+        font-size: 14px;
+        text-align:right;
+        width: 0%;
+    }
+</style>
+
+<script>
+    /*var Video = document.getElementById("myVideo")
+    function playV(){
+        Video.play();
+    }
+    function pauseIt(){
+        Video.pause();
+    }
+
+    let i = 0
+    function move(){
+        if(i == 0){
+            i = 1
+            var elem = document.getElementsByClassName("progress")
+            let width = 1;
+            let id = setInterval(frame, 10);
+            function frame(){
+                if (width >=100){
+                    clearInterval(id);
+                    i=0
+                }else{
+                    width++
+                    elem.style.width = width +'%'
+                }}
+        }
+    }*/
+    //
+    function VideoConfig(id) {
+        const video = document.getElementById(id)
+        video.oncontextmenu = () => false
+
+        document.querySelector(`[wm-play=${id}]`).onclick = e =>video.play()
+        document.querySelector(`[wm-pause=${id}]`).onclick = e =>video.pause()
+
+        setInterval(() => {
+            const percentage = (video.currentTime / video.duration) * 100
+            const value = document.querySelector(`[wm-progress=${id}] > div`)
+            value.style.width = `${percentage}%`
+            value.innerHTML = `${percentage.toFixed(1)}%`
+        },500)
+    }
+    VideoConfig('myVideo')
+</script>
