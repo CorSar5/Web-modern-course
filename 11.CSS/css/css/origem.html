@@ -5,11 +5,15 @@
     <meta charset="UTF-8">
     <title>Origem CSS: Externo, Interno e Inline</title>
     <style>
-        /* ... */
+       body {
+           background-color: aquamarine;
+
+       }
     </style>
+    <link rel="stylesheet" href="css/extern.css"> <!--The last one that is given/processed is the one that will stand-->
 </head>
 
-<body>
+<body style="background-color:coral;"><!--The most speficif one-->
     <h1>E agora?</h1>
 </body>
 
