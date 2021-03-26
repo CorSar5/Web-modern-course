@@ -6,7 +6,24 @@
     <title>CSS Selectors</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        /* div > p - direct son*/
+        /* div p -from all the family*/
+        /* ol + ul - following brothers*/
+        /* ol ~ li - all types of brothers*/
+        /* ul, li - to choose more than one( you can get this combined with the other ones, above and under*/
+        /*[] - property*/
+        /* [n = name] - if the name is uncorrect or not fully written you may put a ~ behind the = sign*/
+        /*[n ~= name] - in the 'escritório empresa case, if instead of a blank space there was a comma it wouldn't work*/
+        /* although if you use [n *= la] you will get modified all the properties that have 'la' in their name*/
+        /* # - id*/
+        /* . - class*/
+        /* span:nth-child(1)- it will change the first child from the span (you can also use odd, even, n, etc. */
+       /*div > span:nth-of-type(2) will get the second span(child) from a div(parent)*/
+
+        *{
+            color: #ff0;
+            background-color: #f77;
+        }
     </style>
 </head>
 
@@ -29,7 +46,7 @@
             </ol>
             <div id='aninhado' class='tag'>
                 <div class="tag">
-                    <section class='tag'>
+                    <section class='tag nolabel'>
                         <span class='tag'>1</span>
                         <p class='tag'>2</p>
                         <span class='tag'>3</span>
