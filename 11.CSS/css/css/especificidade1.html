@@ -5,12 +5,34 @@
     <meta charset="UTF-8">
     <title>Especificidade CSS</title>
     <style>
-        /* https://developer.mozilla.org/pt-BR/docs/Web/CSS/Specificity */
+        /* https://developer.mozilla.org/pt-BR/docs/Web/CSS/~
+        Specificity */
+        /* In general lines: . . .
+            1. Rules with !important
+            2. Most Specific Selectors
+            3. The last processed rule (draw)
+        */
+        p {
+            background-color: #aaa;
+        }
+
+        .observacao {
+            background-color: #5f5!important;/*won't result because the color that is been given is from background, another property.*/
+            border: dashed 5px;
+            padding: 200px!important;
+            font-size: 40px;
+        } /*class is more specific than p*/ 
+
+        p.observacao {
+            padding: 2px ;
+            background: linear-gradient(to right, red, rgb(0, 247, 255));
+        }
+
     </style>
 </head>
 
 <body>
-    <p class='observacao'>Olha essa observação!!!!</p>
+    <p class='observacao'>Look at this!!!!</p>
 </body>
 
 </html>
