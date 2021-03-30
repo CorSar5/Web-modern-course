@@ -7,8 +7,12 @@
         div {
             font-size: 40px;
             height: 100px;
-            width: 260px;
+            width: 260px;/*This is what limits the box*/
             border: solid 3px;
+            overflow: hidden;/*What is not inside it won't appear*/
+            overflow: scroll;/*You scroll vertically and horizontally*/
+            overflow-x: scroll;/*Only the x scroll, but allows the y one*/
+            overflow-y: hidden;/*Hiddes the y scroll*/
         }
     </style>
 </head>
