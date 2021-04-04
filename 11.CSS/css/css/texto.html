@@ -6,15 +6,70 @@
     <title>Texto</title>
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <style>
-        /* ... */
         * {
             margin: 0;
+        }
+        html{
+            font-size: 28px
         }
 
         body {
             display: flex;
             flex-direction: column;
             align-items: center;
+        }
+
+        div{
+            font-size: 5opx;
+        }
+
+        p{
+            /* standart values*/
+            font-size: 1em;
+            font-size:100%;
+            font-size:16px;
+            font-size: 12pt;
+
+            /* absolute units*/
+            font-size:100px; /*a pixel's size is relative*/
+            font-size: 72pt; /*points*/
+            font-size: 1in; /*inches*/
+
+            /*relative units*/
+            font-size:2.2em;
+            font-size: 2.2rem;
+            font-size: 50vh;
+            font-size: 10vh;
+
+            font-family: monospace;
+            font-family: Georgia, serif;
+            font-family: Verdana, sans-serif;
+            font-family: 'Indie Flower', cursive;
+
+            font-weight: 100;
+            font-style: italic;
+            text-transform: uppercase;
+            /*text-decoration: overline underline line-through;*/
+            word-spacing: 10px;
+            letter-spacing:20px;
+            line-height: 2.5em;
+            text-align: center;
+        }
+
+        .button{
+            font-size: 28px;
+            text-decoration: none;
+            padding: 10px 30px;
+            border-radius: 25px;
+        }
+        .destaque {
+            color: #fff;
+            background-color: tomato;
+            box-shadow: 1px 1px 1px 1px #000;
+            
+        }
+        .destaque:active{
+            box-shadow:none;
         }
     </style>
 </head>
@@ -26,7 +81,7 @@
             <br>legal!!!
         </p>
     </div>
-    <a href="http://google.com" class="botao destaque">Google</a>
+    <a href="http://google.com" class="button destaque">Google</a>
 </body>
 
 </html>
