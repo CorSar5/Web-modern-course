@@ -7,7 +7,61 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
-        /* ... */
+    html, body {
+    margin: 0;
+    padding: 0;
+    }
+    .cabecalho{
+           display: flex;
+           background-color: #222;
+           align-items: center;
+           border-bottom: solid 5px aquamarine;
+       }
+    .menu{
+        padding: 0;
+        margin: 0;
+    }
+    ul{padding: 0;margin: 0;}
+    li {
+        list-style-type: none;
+        padding: 0;
+        display: inline;
+    }
+    a{
+        text-decoration: none;
+        color: #fff;
+        font-size:30px;
+        font-family: 'Oswald';
+        padding: 10px;
+    }
+    li > a:hover{
+        background-color: aquamarine;
+        color: #000;
+        height: inherit;
+    }
+    .menu-toggle{
+        display: none;
+    }
+    .autenticacao{
+        position:fixed;
+        right:10px;
+    }
+    .destaque{
+        background-color: red;
+        border-radius: 30px 30px 30px 30px;
+    }
+    @media (max-width:50%){
+        .menu-toggle{display:block;}
+    }
+    @media (max-width:1300px){
+        .autenticacao{display: none;}
+    }
+    @media (max-width:950px){
+        .menu{display: none;}
+    }
+    @media (max-width: 700px){
+        .menu-toggle {display: block;}
+    }
     </style>
 </head>
 
