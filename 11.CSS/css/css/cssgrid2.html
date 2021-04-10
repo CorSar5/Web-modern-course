@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <title>CSS Grid #02</title>
     <style>
+        /*grid-column-gap will be column-gap
+        grid-row-gap will be row-gap,
+        grid-gap will be gap*/
         html,
         body {
             margin: 20px;
@@ -19,6 +22,27 @@
             font-size: 30px;
             border: solid 5px dodgerblue;
             background: #fff;
+        }
+
+        body{
+            display: grid;
+            grid-template-columns:[beggining] 1fr 
+            [st-half medium-1]1fr
+            [nd-half medium-2]1fr[ende];
+            grid-template-rows: repeat(3, 1fr);
+            
+            column-gap: 20px;
+            row-gap: 20px;
+            gap: 50px 10px;/*rows, columns*/
+            gap:10px;
+        }
+        .d1{
+            grid-column-start: medium-2;
+            grid-column-end: ende;
+            grid-column: medium-1/ende;
+            grid-row: 1/span2;
+            /*row-start column-start row-end column-end*/
+            grid-area: 1 / medium-1 / span3 / ende;
         }
     </style>
 </head>
