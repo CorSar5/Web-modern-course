@@ -7,10 +7,31 @@
 </head>
 <body class="conteudo exercicio">
     <div id="primeiro">#primeiro</div>
-    <div>Segundo</div>
+    <div wb-attrib>Segundo</div>
     <div class="terceiro ultimo"><span wb-attrib>.terceiro .ultimo</span></div>
     <script>              
-        // ...
+        document.querySelector('#primeiro').classList.add('destaque')
+
+        const select = selector =>
+            document.querySelectorAll(selector).forEach(e => e.classList.add('destaque'))
+        const del = selector =>
+            document.querySelectorAll(selector).forEach(a => a.classList.remove('destaque'))
+        
+        select('div')
+        del('*')
+        select('.terceiro.ultimo')
+
+        del('*')
+        select(':not(#primeiro')
+
+        del('*')
+        select(':nth-child(1)')
+
+        del('*')
+        select('div:nth-of-type(1)')
+
+        del('*')
+        select('[wb-attrib]')
     </script>
 </body>
 </html>
