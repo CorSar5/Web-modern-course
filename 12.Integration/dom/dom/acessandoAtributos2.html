@@ -10,14 +10,33 @@
 <body class='conteudo exercicio'>
     <div>
         <label for="compras">Compras</label>
-        <ul id="compras" destino='escritório' data-urgencia="5">
+        <ul id="compras" destino='escritório' data-urgencia="5" data-anything="test">
             <li>Café</li>
             <li>Água</li>
             <li>Copo Descartável</li>
         </ul>
     </div>
     <script>
-        // ...
+        const list = document.querySelector('#compras')
+        console.log('Element "ul"...........')
+        console.log('childNodes', list.childNodes)
+        console.log('destino', list.destino)/*undefined, because the browser doens't recognize this method*/
+        console.log('getAttribute', list.getAttribute('destino'))
+        console.log('hasAttribute', list.hasAttribute('destino'))
+        list.setAttribute('destino', 'empresa')/*destino = 'empresa'*/
+        list.setAttribute('status', 'aberto')
+        list.removeAttribute('destino')
+        console.log(list.dataset)
+        console.log(list.dataset.urgencia)
+        list.dataset.urgencia = 4
+        /*list.data-urgencia impossible because of the '-'*/
+        console.log(list.getAttribute('data-urgencia'))
+
+        //careful
+        const label = document.querySelector('label')
+        console.log(label.for)/*won't work 'cause for is a JS property*/
+        console.log(label.htmlFor)/*only this one's available by this way*/
+        console.log(label.getAttribute('for'))/*here htmlfor doesn't work*/
     </script>
 </body>
 
