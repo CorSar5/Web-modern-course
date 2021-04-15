@@ -31,7 +31,7 @@
         const text = document.createTextNode('Before...')
         div3.insertBefore(text, div3.childNodes[0])
 
-        const div4 = div3.cloneNode(true)
+        const div4 = div3.cloneNode(true)//if this statement is true all the childs from div3 will appear in div4
         body.appendChild(div4)
         body.removeChild(div3)
     </script>
