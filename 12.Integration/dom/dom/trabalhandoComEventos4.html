@@ -31,6 +31,37 @@
         <button wm-submit>Pesquisar</button>
     </form>
     <script>
-        // ...
+        /*const submit = document.querySelector('[wm-submit]')
+        submit.onclick = function(e){
+            e.preventDefault()
+
+            const form = e.target.parentNode
+            const formData = new FormData(form)
+            formData.append('ajax', true)
+            console.log(formData.get('q'))
+            console.log(formData.has('hl'))
+            
+            for (data of formData){ //because there is no let before data*
+                console.log(data)
+            }
+
+            console.log(window.data)//* it can be used here because it has came to the global scope. Attention with this !!
+        }*/
+        
+        const form = document.forms[0]
+        form.onsubmit= function(e){
+            e.preventDefault()
+
+            const form = e.target
+            const formData = new FormData(form)
+            formData.append('ajax', true)
+            console.log(formData.get('q'))
+            console.log(formData.has('hl'))
+            
+            for (let data of formData){
+                console.log(data)
+            }
+            console.log(window.data)
+        }
     </script>
 </body>
