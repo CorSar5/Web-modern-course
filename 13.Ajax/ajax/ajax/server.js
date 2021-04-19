@@ -17,7 +17,7 @@ const storage = multer.diskStorage({
     }
 })
 
-const upload = multer({storage}).single('archive')
+const upload = multer({ storage }).single('archive')
 
 app.post('/upload', (req, res) => {
     upload(req, res, err=>{
@@ -29,4 +29,4 @@ app.post('/upload', (req, res) => {
     })
 })
 
-app.listen(8080, () => console.log("executing..."))
+app.listen(8081, () => console.log("executing..."))
