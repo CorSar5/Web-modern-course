@@ -36,4 +36,14 @@ app.post('/formulario', (req, res) => {
     })
 })
 
+app.get('/parOuImpar', (req, res)=>{
+        // req.body
+        // req.query(in this case /:className/12)
+        // req.params(here if we had a class in the url we would only nedd /12)
+        const par = parseInt(req.query.numero) % 2 === 0
+        res.send({  
+            result: par ? 'par' : 'impar'
+        })
+})
+
 app.listen(8082, () => console.log("executing..."))
