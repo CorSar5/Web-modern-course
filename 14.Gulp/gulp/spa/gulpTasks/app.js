@@ -5,8 +5,6 @@ const uglifycss = require('gulp-uglifycss')
 const concat = require('gulp-concat')
 const sass = require('gulp-sass')
 const htmlmin = require('gulp-htmlmin')
-const { logError } = require('gulp-sass')
-
 
 function appHTML(){
     return gulp.src('src/**/*.html')
@@ -16,7 +14,7 @@ function appHTML(){
 
 function appCSS(){
     return gulp.src('src/assets/sass/index.scss')
-        .pipe(sass().on('error', logError))
+        .pipe(sass().on('error', sass.logError))
         .pipe(uglifycss({"uglyComments": true}))
         .pipe(concat('app.min.css'))
         .pipe(gulp.dest('build/assets/css'))
@@ -31,7 +29,7 @@ function appJS(){
 }
 
 function appIMG(){
-    return gulp.src('srC/assets/imgs/**/*.*')
+    return gulp.src('src/assets/imgs/**/*.*')
         .pipe(gulp.dest('build/assets/imgs'))
 }
 
