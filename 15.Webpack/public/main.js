@@ -79,7 +79,29 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _person__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./person */ \"./src/person.js\");\n//const Person = require('./person')\r\n\r\n\r\nconst clerk = new _person__WEBPACK_IMPORTED_MODULE_0__[\"default\"]\r\nconsole.log(clerk.greetings())\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _person__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./person */ \"./src/person.js\");\n//const Person = require('./person')\r\n\r\n//import './modules/moduleA' without this line the console.log() won't run\r\n\r\nconst clerk = new _person__WEBPACK_IMPORTED_MODULE_0__[\"default\"]\r\nconsole.log(clerk.greetings())\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/moduleA.js":
+/*!********************************!*\
+  !*** ./src/modules/moduleA.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("const moduleB = __webpack_require__(/*! ./moduleB */ \"./src/modules/moduleB.js\")\r\nconsole.log(moduleB.greetings())\n\n//# sourceURL=webpack:///./src/modules/moduleA.js?");
+
+/***/ }),
+
+/***/ "./src/modules/moduleB.js":
+/*!********************************!*\
+  !*** ./src/modules/moduleB.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = {\r\n    greetings(){ return 'Hello I am Module B!'}\r\n}\n\n//# sourceURL=webpack:///./src/modules/moduleB.js?");
 
 /***/ }),
 
@@ -91,7 +113,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _per
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Person; });\nclass Person {\r\n    greetings(){\r\n        return 'Good Moorning!'\r\n    }\r\n}\n\n//# sourceURL=webpack:///./src/person.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Person; });\n/* harmony import */ var _modules_moduleA__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/moduleA */ \"./src/modules/moduleA.js\");\n/* harmony import */ var _modules_moduleA__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_modules_moduleA__WEBPACK_IMPORTED_MODULE_0__);\n //will make moduleA run\r\n\r\nclass Person {\r\n    greetings(){\r\n        return 'Good Moorning!'\r\n    }\r\n}\n\n//# sourceURL=webpack:///./src/person.js?");
 
 /***/ })
 
