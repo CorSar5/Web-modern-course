@@ -15,11 +15,12 @@ module.exports = {
     ],
     module: {
         rules: [{
-            test: /\.css$/,
+            test: /\.s?[ac]ss$/,
             use: [
                 MiniCssExtractPlugin.loader,
                 //conflict with the upper loarder- 'style-loader', //Adds CSS to DOM injecting the tag <style>
-                'css-loader' //interpreta @import, url()...
+                'css-loader', //interpreta @import, url()...
+                'sass-loader',
             ]
         }]
     }
