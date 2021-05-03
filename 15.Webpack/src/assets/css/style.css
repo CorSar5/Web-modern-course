@@ -1,3 +1,7 @@
 body  {
-    background-color: red;
+    background-color: purple;
+    background-image: url(../images/logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
 }
