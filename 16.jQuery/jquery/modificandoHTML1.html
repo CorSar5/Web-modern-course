@@ -13,8 +13,29 @@
     <div id='conteudo1'></div>
     <div id='conteudo2'></div>
     <div id='conteudo3'></div>
+    <div>Without ID</div>
 
     <script>
-        // ...
+        //Content 1
+        $('#conteudo1').append('<p>1</p>')
+
+        //Content 2
+        const elements =  [
+            $('<li></li>').append('Case1'),
+            $('<li>').append('Case2'),
+            $('<li>').append('Case3')
+        ]
+
+        const list = $('<ul><li>Start</li></ul>').append(elements)
+        $('#conteudo2').append(list)
+
+        //Content 3
+        $('#conteudo3').append(['<h1>1</h1>','<h1>2</h1>'])
+                .prepend('<h1>0</h1>')
+        $('#conteudo3').html('<h1>123</h1>')
+        $('#conteudo3').text('<h1>123</h1>') //does not interpret it only adds it to the div
+
+        //Changing all of them
+        $('div[id]').html('<strong>Todos!</strong>')
     </script>
 </body>
