@@ -13,13 +13,36 @@
     <div id='conteudo'></div>
 
     <script>
-        const pessoas = [
+        /*table = $('#conteudo').append('<table style="width:100%""></table>')
+        header = $(table).append('<tr><th>Name</th><th>Mark</th></tr>')
+
+        for (i = 0; i < pessoas.length; i++){
+            $('<tr>').appendTo(table)
+            $(table).append('<td>',pessoas[i].nome,'<td>')
+            $(table).append('<td>',pessoas[i].nota,'<td>')
+            $('</tr>').appendTo(table)
+        }*/
+        
+        $(document).ready(function(){
+            const pessoas = [
             { nome: 'Ana', nota: 9.1 },
             { nome: 'Bianca', nota: 8.4 },
             { nome: 'Carlos', nota: 7.6 },
             { nome: 'Julia', nota: 9.7 }
         ]
+
+        const lines =  pessoas.map(p => {
+            const tdNome= $('<td>').html(p.nome)
+            const tdNota = $('<td>').html(p.nota)
+            return $('<tr>').append([tdNome, tdNota])
+        })
+
+        const table =  $('<table>').append(lines)
+            .css('border', 'solid 5px ')
         
-        // ...
+        $('#conteudo').append(table)
+        })
+
+        //$(function() {}) instead of doing like the mode above
     </script>
 </body>
