@@ -22,7 +22,42 @@
 <body class='conteudo exercicio'>
     <h1>Manipulando Atributos</h1>
     <div wm-relogio='1000'></div>
+    <div wm-relogio='3000'></div>
     <script>
-        // ...
+        function Clock(element){
+            const CorrectHour = $('<p>').html('0')
+            const MinusButton = $('<button>').html('-')
+            const PlusButton = $('<button>').html('+')
+
+            const $element = $(element)
+            $element.append(CorrectHour, MinusButton, PlusButton)
+
+            const getCurrentInterval = 
+                () => parseInt($element.attr('wm-relogio'))
+            
+            let timer = null
+            const iniciate = () => {    
+                if (timer) clearInterval(timer)
+                   timer = setInterval(() =>{
+                CorrectHour.html(new Date().toLocaleString('pt-BR'))
+                   },getCurrentInterval())
+            }
+            const ChangeInterval = delta => {
+                const newI = Math.max(getCurrentInterval() +delta, 1000)
+                $element.attr('wm-relogio', newI)
+                iniciate()
+            }
+            MinusButton.click(e => ChangeInterval(1000))
+            PlusButton.click(e=>ChangeInterval(-1000))
+            iniciate()
+        }
+        
+        $('[wm-relogio]').each((i, e) => new Clock(e))
+        
+        //$('[wm-relogio]').attr('sup') //read
+        //$('[wm-relogio]').attr('sup', 3) //change or include
+        
+        $('[wm-relogio]').attr({sup: 1, newI: true})
+        $('[wm-relogio]').removeAttr('sup').removeAttr('newi')
     </script>
 </body>
