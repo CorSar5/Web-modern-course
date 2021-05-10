@@ -20,6 +20,34 @@
     <input type="text" placeholder="Cor de Background">
 
     <script>
-        // ...
+        function showPosition(e){
+            $('#posicao').html(`x: ${e.clientX} y: ${e.clientY}`)
+        }
+
+        $('body').on('mousemove', showPosition)
+
+        $('#posicao').mouseover(e =>{
+            $('body').off('mousemove', showPosition)
+        })
+
+        $('#posicao').mouseleave(e =>{
+            $('body').mousemove( showPosition)
+        })
+
+        let clicks = 0
+        $('body').click(e =>{
+            $('#cliques').html(`Clicks: ${++clicks}`)
+        })
+
+        const OriginalBackground = $('body').css('background-color')
+
+        $('input').keyup(function (e){
+            const value = $(this).val()
+            if (value.match(/#[\da-fA-F]{3,6}/)){
+                $('body').css('background-color', value)
+            }else{
+                $('body').css('background-color', OriginalBackground)
+            }
+        })
     </script>
 </body>
