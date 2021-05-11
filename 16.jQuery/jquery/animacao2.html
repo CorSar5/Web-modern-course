@@ -25,9 +25,34 @@
 </head>
 
 <body>
-    <div>Animar!</div>
+    <div>Chupem-mos!</div>
 
     <script>
-        // ...
+        function changeWidth(value, dur, callback){
+            $('div').animate({width: `+=${value}`}, dur,
+                 callback)
+        }
+
+        function moveXY(value, dur ,callback){
+            $('div').animate({top: `+=${value}`, left: `+=${value}`},   dur, callback)
+        }
+
+        function rotate(value, dur, callback){
+            $('div').animate({transform: `+=${value}`}, {
+                step: function(value){
+                    $(this).css('transform', `rotate(${value}deg)`)
+                },
+                duration: dur
+            }, 'linear', callback)
+        }
+
+        changeWidth(300, 100, ()=>{
+            changeWidth(-300, 'slow', ()=>{
+                moveXY(300, 600, ()=>{
+                    rotate(3600, 3000)
+                })
+            })
+        })
+        //Callback to Promise Exercise
     </script>
 </body>
