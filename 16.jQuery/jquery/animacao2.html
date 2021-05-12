@@ -25,7 +25,7 @@
 </head>
 
 <body>
-    <div>Chupem-mos!</div>
+    <div>O Senhor é meu pastor</div>
 
     <script>
         function changeWidth(value, dur, callback){
@@ -46,13 +46,24 @@
             }, 'linear', callback)
         }
 
-        changeWidth(300, 100, ()=>{
+        /*changeWidth(300, 100, ()=>{
             changeWidth(-300, 'slow', ()=>{
                 moveXY(300, 600, ()=>{
                     rotate(3600, 3000)
                 })
             })
-        })
+        })*/
         //Callback to Promise Exercise
+
+        function PromiseA(val=300, dur=300){
+            return Promise.all([
+                changeWidth(300, 100),
+                changeWidth(-250, 'slow'),
+                moveXY(300, 600),
+                rotate(3600, 3000)
+            ])}
+        
+        PromiseA()
+            
     </script>
 </body>
