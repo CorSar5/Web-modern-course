@@ -140,6 +140,16 @@
 <hr>
 
 <!-- Tooltip -->
+<div>
+    <div class="alert alert-warning">
+        A JS function is needed.
+        <strong>What now?</strong>
+    </div>
+
+    <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="think before">
+        Exclude
+    </button>
+</div>
 
 <h1 class="mt-5">6. Slider -
     <small>
@@ -152,7 +162,7 @@
 
 <h1 class="mt-5">7. Accordion -
     <small>
-        <a href="https://getbootstrap.com/docs/4.0/components/collapse/" target="_black">Documentação Oficial</a>
+        <a href="https://getbootstrap.com/docs/4.0/components/tooltips/" target="_black">Documentação Oficial</a>
     </small>
 </h1>
 <hr>
@@ -160,5 +170,6 @@
 <!-- Accordion -->
 
 <script>
-    // ...
+    // Works?
+    $('[data-toggle="tooltip"]').tooltip()
 </script>
