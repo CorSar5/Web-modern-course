@@ -8,7 +8,9 @@ export default class Salute extends Component{
     }
     
     constructor(props){
-        super(props)
+        super(props)//the call of super is fundamental 
+        
+        this.setType = this.setType.bind(this)
     }
 
     setType(e){
@@ -25,7 +27,7 @@ export default class Salute extends Component{
                 <h1>{type} {name}</h1>
                 <hr />
                 <input type="text" placeholder="Type..." value={type} 
-                onChange={e=>this.setType(e)}/>
+                onChange={this.setType}/>
                 <input type="text" placeholder="Name..." value={name}
                 onChange={e=>this.setName(e)}/>
             </div>
