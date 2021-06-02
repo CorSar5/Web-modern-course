@@ -1,4 +1,4 @@
-import React, { Component } form 'react'
+import React, { Component } from 'react'
 import Main from '../template/Main'
 
 const headerProps ={
