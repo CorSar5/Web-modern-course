@@ -1,11 +1,9 @@
 {
-    "users": [{
-        "id":1,
-        "name": "Richard Toms",
-        "email": "richard05@domain.com"
-    },{
-        "id":2,
-        "name":"Michele Phelps",
-        "email":"phelps.m@domain.com"
-    }]
+  "users": [
+    {
+      "name": "Leandro",
+      "email": "leandropessilva275@gmail.com",
+      "id": 1
+    }
+  ]
 }
