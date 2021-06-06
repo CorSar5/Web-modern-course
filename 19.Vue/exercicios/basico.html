@@ -7,9 +7,33 @@
     <script src="/js/vue.min.js"></script>
 </head>
 <body class="exercicio">
-
+    <div id="app">
+        <p>1) {{ 2+2 }}</p> <!--double mustache-->
+        <p>2) {{"test".toUpperCase()}}</p>
+        <p>3) Product: {{name}}, ${{price}} <hr>Total Discount: {{discount*100}}%
+        <p>4) New Price: {{discountedPrice}}</p> <!--The function does not need to be called in this case-->
+        </p> <!-- here,in vue, "this" is not used-->
+        <p><hr>Right Hour: {{rightHour()}}</p>
+    </div>
     <script>
-        // ...
+        new Vue({
+            el: "#app",
+            data: {
+                name: 'Pen',
+                price:2.20,
+                discount: 0.15
+            },
+            methods:{
+                rightHour(){
+                    return new Date().toLocaleString()
+                }
+            },
+            computed: {
+                discountedPrice(){
+                    return this.price *(1-this.discount)/*Inside Vue Instance,"this" is needed*/
+                }
+            }
+        })
     </script>
 </body>
 </html>
