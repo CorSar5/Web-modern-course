@@ -1,6 +1,6 @@
 const fs = require('fs')
 
-module.exports = paths => {
+module.exports = rows => {
     return new Promise((resolver, reject) =>{
         try{
             const words = rows
