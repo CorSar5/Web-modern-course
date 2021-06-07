@@ -7,9 +7,30 @@
     <script src="/js/vue.min.js"></script>
 </head>
 <body class="exercicio">
-
+    <div id="app">
+        <p>{{link}}</p>
+        <p><a href="{{link}}">Youtube2</a></p>
+        <p><a v-bind:href="link" >Youtube</a></p>
+        <!--v-bind is a directive, personalizated properties-->
+        <p><a :href="link">Reduced way of the above</a></p>
+        <p>
+            <input type="text" v-model="name">
+            <span>{{name}}</span>
+        </p>
+    </div>
     <script>
-        // ...
+       new Vue({
+           el: "#app",
+           data: {
+               name: "Marie",
+               link: "https://youtube.com"
+           },
+           watch: {
+               name(newValue){
+                   console.log(newValue.toUpperCase())
+               }
+           }
+       })
     </script>
 </body>
 </html>
