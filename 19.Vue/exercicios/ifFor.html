@@ -7,9 +7,32 @@
     <script src="/js/vue.min.js"></script>
 </head>
 <body class="exercicio">
-
+    <div id="app">
+        <p v-for="(student, i) in students">
+            {{i+1}}) {{student.name}} - {{student.mark}}
+            <span v-if="student.mark>=18">|Honorable Mark|</span>
+            <span v-else-if="student.mark>=9.5">|Approved|</span>
+            <span v-else>|Reproved|</span>
+        </p>
+        <ul style="list-style:none;">
+            <li v-for="n in 8">
+                <span v-show="n >=4">{{n}}</span>
+            </li>
+        </ul>
+    </div>
     <script>
-        // ...
+        new Vue({
+            el: "#app",
+            data:{
+                students: [
+                    {name:"Leslie", mark:"9.6"},
+                    {name:"Peter", mark:"15.7"},
+                    {name:"Charlie", mark:"19.4"},
+                    {name:"Emily", mark:"7.5"}
+                ]
+            },
+
+        })
     </script>
 </body>
 </html>
