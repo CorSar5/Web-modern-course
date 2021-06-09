@@ -7,9 +7,22 @@
     <script src="/js/vue.min.js"></script>
 </head>
 <body class="exercicio">
-
+    <div id="app">
+        <greeting name='Emily'></greeting>
+        <greeting name='Flamy'/> <!--won't work from here-->
+        <greeting name='Emma'></greeting>
+    </div>
     <script>
-        // ...
+        Vue.component('greeting', {
+            props: ['name'],
+            template: `
+                <div> Good Moorning {{name}}!</div>
+            `
+        })
+
+        new Vue({
+            el:'#app'
+        })
     </script>
 </body>
 </html>
