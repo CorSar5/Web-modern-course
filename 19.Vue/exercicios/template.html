@@ -7,9 +7,23 @@
     <script src="/js/vue.min.js"></script>
 </head>
 <body class="exercicio">
-    
+    <div id="app">
+
+    </div>
     <script>
-        // ...
+        new Vue({
+            el:'#app',
+            data:{
+                title:'VueJS',
+                subtitle: 'Progressive Framework'
+            },
+            template: `
+                <div>
+                    <h1>{{title}}</h1>
+                    <h3>{{subtitle}}</h3>
+                </div>
+            `//only the 1st element will be rendered, that bring us the necessity to involve it in a div, span, ...
+        })
     </script>
 </body>
 </html>
