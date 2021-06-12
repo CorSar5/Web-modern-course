@@ -1,6 +1,6 @@
 <template>
     <div class="calculator">
-        <Display/>
+        <Display value="0"/>
         <Button label="AC" triple/>
         <Button label="/" operation/>
         <Button label="7"/>
