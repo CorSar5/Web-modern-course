@@ -2,7 +2,6 @@
   <div id="app">
       <h1>Calculator</h1>
       <Calculator/>
-      <Button/>
   </div>
 </template>
 
