@@ -27,6 +27,6 @@ function filterValidRow(row) {
     return notNumber && notEmpty && notInterval
 }
 
-const removePunctuation = row => row.replace(/[,!.?-] /g, '')
+const removePunctuation = row => row = row.replace(/[,?!.-]/g, ""); 
 const removeTags = row => row.replace(/(<[^>]+)>/ig, '').trim()
 const mergeRows = (fullText, row) => `${fullText} ${row}` 
