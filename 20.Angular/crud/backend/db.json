@@ -1,17 +1,19 @@
 {
-    "products": [
-        {
-            "id": 1,
-            "name": "Black Pen",
-            "price": 2.10
-        },{
-            "id": 2,
-            "name": "Notebook",
-            "price": 560.00
-        },{
-            "id": 3,
-            "name": "Samsung S20+",
-            "price": 1200.21
-        }
-    ]
+  "products": [
+    {
+      "id": 1,
+      "name": "Black Pen",
+      "price": 2.1
+    },
+    {
+      "id": 2,
+      "name": "Notebook",
+      "price": 560
+    },
+    {
+      "id": 3,
+      "name": "Samsung S20+",
+      "price": 1200.21
+    }
+  ]
 }
