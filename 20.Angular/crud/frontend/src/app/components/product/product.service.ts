@@ -27,7 +27,7 @@ export class ProductService {
   read(): Observable<Product[]>{
     return this.http.get<Product[]>(this.baseUrl)
   }
-  delete(id:String): Observable<Product>{
+  delete(id:number): Observable<Product>{
     const Url = `${this.baseUrl}/${id}`
     return this.http.delete<Product>(Url)
   }
