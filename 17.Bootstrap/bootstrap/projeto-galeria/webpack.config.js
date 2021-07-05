@@ -3,31 +3,37 @@ const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
- 
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+
 module.exports = {
     mode: modoDev ? 'development' : 'production',
     entry: './src/index.js',
-    output: {
-        filename: 'index.js',
-        path: __dirname + '/public'
-    },
     devServer: {
-        contentBase: "./public",
-        port: 9000
+        contentBase: './build',
+        port: 9000,
     },
     optimization: {
         minimizer: [
             new UglifyJsPlugin({
                 cache: true,
-                parallel: true
+                parallel: true,
+                sourceMap: true
             }),
             new OptimizeCSSAssetsPlugin({})
         ]
     },
+    output: {
+        filename: 'app.js',
+        path: __dirname + '/build'
+    },
     plugins: [
-        new MiniCssExtractPlugin({
-            filename: "estilo.css"
-        })
+        new MiniCssExtractPlugin({ filename: 'estilo.css' }),
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: '**/*.html', context: 'src/' },
+                { from: 'imgs/**/*', context: 'src/' },
+            ],
+            }),
     ],
     module: {
         rules: [{
@@ -40,6 +46,9 @@ module.exports = {
             ]
         }, {
             test: /\.(png|svg|jpg|gif)$/,
+            use: ['file-loader']
+        }, {
+            test: /.(ttf|otf|eot|svg|woff(2)?)$/,
             use: ['file-loader']
         }]
     }
