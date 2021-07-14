@@ -1,4 +1,4 @@
-db. <TAB> <TAB>
+db. <TAB> <TAB> for help
 help
 cls
 show dbs
