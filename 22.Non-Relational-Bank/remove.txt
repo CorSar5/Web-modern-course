@@ -1,0 +1,5 @@
+db.state.count()
+db.states.remove({initial: "AC"})
+db.states.remove({population: {$exists:true}}, 1)
+db.states.update({initial:"RJ"},{$set: {population: 16720000}})
+db.states.remove({population: {$lt:20000000}})
