@@ -1,10 +1,11 @@
 db.states.save({name: "Acre", initial: "AC", region: "North"})
 db.states.save({name: "Alagoas", inital: "AL", region: "Northeast", population: 3322000})
-db.states.insert({
+db.states.save({
     name: "Rio de Janeiro",
     initial: "RJ",
-    region: "Sudeste",
+    region: "Southeast",
     cities: [{
+        _id: ObjectId(),
         name: "Niterói",
         area: 133.9,
         population: 487562
