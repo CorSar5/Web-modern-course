@@ -1,0 +1,11 @@
+db.states.aggregate([
+    { $project: {name:1, "cities.name": 1, _id:0}}
+])
+
+db.states.aggregate([
+    { $project: {population: {$sum: "$cities.population"}, initial: 1, _id:0}},
+    { $group: {_id: null, totalPopulation: {$sum:"$population"}}},
+    { $project: {_id: 0, totalPopulation: 1}}
+])
+
+whenever the name's in the right we need to use "$" 
