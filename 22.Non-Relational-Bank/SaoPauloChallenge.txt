@@ -7,7 +7,7 @@ nome = São Paulo, sigla = SP, regiao = Sudeste
 
 Cada Cidade tem o atributo _id <- ObjectId
 
-db.state.insert({
+db.states.insert({
     name: "São Paulo",
     initial: "SP",
     region: "Sudeste",
