@@ -7,24 +7,24 @@ nome = São Paulo, sigla = SP, regiao = Sudeste
 
 Cada Cidade tem o atributo _id <- ObjectId
 
-db.estados.insert({
-    nome: "São Paulo",
-    sigla: "SP",
-    regiao: "Sudeste",
-    cidades: [{
+db.state.insert({
+    name: "São Paulo",
+    initial: "SP",
+    region: "Sudeste",
+    cities: [{
         _id: ObjectId(),
-        nome: "Campinas",
+        name: "Campinas",
         area: 795.7,
         prefeito: "Jonas Donizette",
-        populacao: 1081000
+        population: 1081000
     }, {
         _id: ObjectId(),
-        nome: "Garulhos",
-        populacao: 1325000
+        name: "Garulhos",
+        population: 1325000
     }, {
         _id: ObjectId(),
-        nome: "Sorocaba",
-        distanciaCapital: 87,
-        populacao: 644919
+        name: "Sorocaba",
+        capitalDistance: 87,
+        population: 644919
     }]
 })
