@@ -1,0 +1,13 @@
+db.companies.aggregate([
+    {$match: {name: "Vale"}},
+    { $lookup: {
+        from: "states",
+        localField: "cityID",
+        foreignField: "cities._id",
+        as:"state"
+    }},
+    {$unwind: "$state"},
+    {$unwind: "$state.cities"},
+    {$addFields: {sameCity: {$cmp: ["$state.cities._id", "$cityID"]}}},
+    {$match: {sameCity: 0}}
+]).pretty()
