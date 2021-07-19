@@ -2,6 +2,11 @@ const express = require('express')
 const app = express()   
 const salute = require('./saluteMid')
 const bodyParser = require('body-parser')
+const userAPI = require('./api/user')
+const user = require('./api/user')
+
+app.post('/user',userAPI.save)
+app.get('/user', userAPI.obtain)
 
 app.use(bodyParser.text())
 app.use(bodyParser.json())
