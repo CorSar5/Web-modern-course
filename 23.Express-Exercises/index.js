@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()   
 const salute = require('./saluteMid')
 
-app.use(salute('Peter'))
+app.use(salute('Mike'))
 
 app.use('/sup',(req, res, next) => {
     console.log('B4')
