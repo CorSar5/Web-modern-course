@@ -1,9 +1,13 @@
 const express = require('express')
 const app = express()   
-const salute = require('./saluteMid')
 const bodyParser = require('body-parser')
+
+const salute = require('./saluteMid')
 const userAPI = require('./api/user')
-const user = require('./api/user')
+require('./api/product')(app, 'with param!')
+
+/* const productAPI = require('./api/product')
+productAPI(app, 'with param!')*/
 
 app.post('/user',userAPI.save)
 app.get('/user', userAPI.obtain)
