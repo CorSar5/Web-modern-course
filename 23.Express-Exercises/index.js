@@ -5,9 +5,31 @@ const salute = require('./saluteMid')
 app.use(salute('Mike'))
 
 app.use('/sup',(req, res, next) => {
-    console.log('B4')
+    console.log('Before...')
     next()
 })
+
+app.get('/client/resume', (req, res)=>{
+    res.send(`Client resume: complete = ${req.query.complete} year = ${req.query.year}`) 
+    //Query is given in the url
+})
+
+app.post('/body', (req, res) => {
+    let body= ''
+    req.on('data', function(part){
+        body += part
+    })
+
+    req.on('end', function() {
+        res.send(body)
+    })
+})
+
+app.get('/client/:id', (req, res,next) =>{
+    res.send(`Client ${req.params.id} selected!`)
+    next()
+})
+
 
 app.get('/sup',(req, res, next) => {
     console.log('while')
@@ -36,7 +58,7 @@ app.get('/sup',(req, res, next) => {
 })
 
 app.use('/sup',(req, res, next) => {
-    console.log('After')
+    console.log('After...')
     next()
 })
 
