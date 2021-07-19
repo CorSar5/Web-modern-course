@@ -1,6 +1,11 @@
 const express = require('express')
 const app = express()   
 const salute = require('./saluteMid')
+const bodyParser = require('body-parser')
+
+app.use(bodyParser.text())
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended:true}))
 
 app.use(salute('Mike'))
 
@@ -15,14 +20,15 @@ app.get('/client/resume', (req, res)=>{
 })
 
 app.post('/body', (req, res) => {
-    let body= ''
+    /*let body= ''
     req.on('data', function(part){
         body += part
     })
 
     req.on('end', function() {
         res.send(body)
-    })
+    })*/
+    res.send(req.body)
 })
 
 app.get('/client/:id', (req, res,next) =>{
