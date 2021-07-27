@@ -8,8 +8,8 @@
             <i class="fa fa-angle-down"></i>
         </div>
         <div class="user-dropdown-content">
-            <a href=""><i class="fa fa-cogs"></i> Administration</a>
-            <a href=""><i class="fa fa-sign-out"> Sign Out</i></a>
+            <router-link to="/admin"><i class="fa fa-cogs"></i> Administration</router-link>
+            <router-link to="/admin"><i class="fa fa-sign-out"> Sign Out</i></router-link>
         </div>
     </div>
 </template>
