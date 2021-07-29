@@ -44,7 +44,7 @@ module.exports = app => {
             res.status(500).send(msg)
         }
     }
-    const limit = 10 //user for pagination
+    const limit = 3 //user for pagination
     const get = async (req, res) => {
         const page = req.query.page || 1
 

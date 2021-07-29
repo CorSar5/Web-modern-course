@@ -12,10 +12,13 @@
             <b-form-select v-if="mode === 'save'" id="category-parentId"
             :options="categories" v-model="category.parentId" />
             <b-form-input v-else id="category-parentId" 
-            type="text" v-model="category.path" readonly/>
+            type="text" 
+            v-model="category.path" 
+            readonly/>
           </b-form-group>
           <b-button variant="primary" v-if="mode === 'save'" @click="save">Save</b-button>
-          <b-button variant="danger" v-if="mode === 'remove'" @click="remove">Delete</b-button>
+          <b-button variant="danger" v-if="mode === 'remove'"
+          @click="remove">Delete</b-button>
           <b-button class="ml-2" @click="reset">Cancel</b-button>
       </b-form>
       <hr>
@@ -47,7 +50,7 @@ export default {
             fields: [
                 {key: 'id', label: 'Code', sortable: true},
                 {key: 'name', label: 'Name', sortable: true},
-                {key: 'path', label: 'Path', sortable: true},
+                {key: 'way', label: 'Way', sortable: true},
                 {key: 'actions', label: 'Actions'}
             ]
         }
