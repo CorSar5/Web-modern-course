@@ -9,7 +9,7 @@ module.exports = app => {
         try {
             existsOrError(value, msg)
         }catch(msg){
-            return
+            return 
         }
         throw msg
     }

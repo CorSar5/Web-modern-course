@@ -34,9 +34,10 @@ module.exports = app => {
         try{
             const rowsDeleted = await app.db('articles')
                 .where({id: req.params.id}).del()
-           try{existsOrError(rowsDeleted, 'Archive not found.')
-        }catch(msg){
-            return res.status(400).send(msg)
+           try{
+               existsOrError(rowsDeleted, 'Archive not found.')
+            }catch(msg){
+                return res.status(400).send(msg)
         }
                 
             res.stauts(204).send()
@@ -69,7 +70,7 @@ module.exports = app => {
             .catch(err => res.status(500).send(err))
     }
 
-    getByCategory = async(req, res) => {
+    const getByCategory = async(req, res) => {
         const categoryId = req.params.id
         const page= req.query.page || 1
         const categories = await app.db.raw(queries.categoryWithChildren, categoryId)

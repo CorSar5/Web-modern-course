@@ -1,7 +1,7 @@
 <template>
   <div class="article-admin">
       <b-form>
-          <input id="article-id" type="hidden" v-model="article.id">
+          <input id="article-id" type="hidden" v-model="article.id"/>
           <b-form-group label="Name:" label-for="article-name">
             <b-form-input id="article-name" type="text"
                   v-model="article.name" required 
