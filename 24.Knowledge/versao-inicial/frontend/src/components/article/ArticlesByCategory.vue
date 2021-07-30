@@ -4,7 +4,7 @@
         sub="Category" />
         <ul>
             <li v-for="article in articles" :key="article.id" >
-                {{ article.name }}
+                <ArticleItem :article ="article" />
             </li>
             <div class="load-more">
                 <button v-if="loadMore" 
@@ -18,10 +18,11 @@
 import {baseApiUrl} from '@/global'
 import axios from 'axios'
 import PageTitle from '../template/PageTitle.vue'
+import ArticleItem from './ArticleItem'
 
 export default {
     name: 'ArticlesByCategory',
-    components: { PageTitle },
+    components: { PageTitle, ArticleItem },
     data: function() {
         return {
             category: {},
