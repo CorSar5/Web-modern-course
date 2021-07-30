@@ -1,6 +1,6 @@
 <template>
   <aside class="menu" v-show="isMenuVisible">
-      <div class="menu filter">
+      <div class="menu-filter">
           <i class="fa fa-search fa-lg"></i>
           <input type="text" placeholder="Digit to filter..."
           v-model="treeFilter" class="filter-field">
